@@ -55,7 +55,7 @@ class Checkout implements Arrayable, Jsonable, JsonSerializable, Responsable
             'mode' => 'payment',
             'success_url' => $sessionOptions['success_url'] ?? route('home').'?checkout=success',
             'cancel_url' => $sessionOptions['cancel_url'] ?? route('home').'?checkout=cancelled',
-            'payment_method_types' => ['card'],
+            'payment_method_types' => ['card', 'ideal'],
         ], $sessionOptions));
 
         return new static($owner, $session);
